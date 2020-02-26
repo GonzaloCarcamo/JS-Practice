@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="add_name()">Hola </h1>
+
+    <script>
+        function add_name(){
+
+        var item = document.createElement('p');
+        var name = prompt('cómo te llamas?');
+    
+        var text_node = document.createTextNode(name);
+        item.appendChild(text_node);
+        var body = document.getElementsByTagName('body');
+        body[0].appendChild(item);
+    }
+    </script>
+</body>
+</html>

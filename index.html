@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 id="banana" onclick="add_element()"style="font-weight:100; 
+    color:green">Dar</h2>
+    <h2 id="longaniza" onclick="remove_element()">Quitar</h2>
+    <ul id="list"></ul>
+    
+    <script>
+        function add_element(){
+        var list = document.getElementById("list") //toma elemento con id = list
+        var next_number = list.children.length + 1 // genera un elemento con valor x + 1
+        var item = document.createElement('li') // crea un <li>
+        var content = document.createTextNode(next_number); // genera un valor x + 1 
+        item.appendChild(content) //aloja el valor x + 1 (content), en <li>
+        list.appendChild(item) // <li> se aloja dentro de <ul>
+  
+    }
+
+    
+    function remove_element(){
+    var list = document.getElementById('list') //toma elemento con id = list
+    
+    if (list.children.length > 0) {
+    var last_number_element = list.children.length - 1
+    var last_li = document.getElementsByTagName('li')[last_number_element]
+    list.removeChild(last_li)
+}   
+
+    else {
+        alert('no es posible seguir removiendo')
+    }
+}
+
+
+   
+   </script>
+</body>
+</html>

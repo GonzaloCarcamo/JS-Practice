@@ -1,0 +1,88 @@
+------------------------------------------------------------------------
+Apuntes Introducción a JS:
+
+ECMASCRIPT = Es el estandar de JS
+
+DOM = document object model 
+
+Se puede utilizar ";". Sin embargo se recomienda, como buena práctica.
+
+undefined = nil en Ruby
+
+En JS las funciones son ciudadanos de primera clase (como argumento, 
+asociar a variable. También pueden estar alojadas dentro de un hash).
+
+Para ejecutar la función alojada en variable "x", es: x().
+Si sólo pregunto por "x", la respuesta será: es una función.
+
+JS siempre se ejecuta sobre un objeto.
+
+"this": muestra el objeto en el cuál se está ejecutando el lenguaje. 
+En el caso de la terminal, el objeto sería la misma terminal;
+otro caso podría ser el mismo navegador.
+
+Si no indicamos objeto, la variable quedará anclada al objeto más
+grande (main).
+
+Dependiendo de donde vamos a embeber JS, va a poder utilizar las APIs 
+asociadas.
+
+Los alerts se permiten por el API que lo conectan con el navegador.
+No funciona en el console.
+
+En JS null es nulo y undefined es indefinido. En ruby "nil" incluye
+ambos casos.
+
+Casteo: cambiar las variables a otro tipo
+
+NaN: not a number
+
+
+Traversing
+
+/* ==========================================================================
+   jQuery plugin settings and other scripts
+   ========================================================================== */
+
+$(document).ready(function () {
+
+  $('#search_field_input').on('keyup', function(){
+    if($(this).val().length >= 3){
+      search_table();
+    }
+    if($(this).val().length == 0){
+      search_table();
+    }
+  });
+
+  function search_table() {
+    // Declare variables 
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("search_field_input");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table_id");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td");
+      for (j = 0; j < td.length; j++) {
+        let tdata = td[j];
+        if (tdata) {
+          if (tdata.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+            break;
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  }
+})
+
+
+
+
+
+

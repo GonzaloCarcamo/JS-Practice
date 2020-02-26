@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <p id='paragraph' style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Sit distinctio sapiente possimus, sequi pariatur commodi 
+        dolorum doloremque corporis corrupti minima ratione optio 
+        nulla accusantium magni. Deleniti accusantium id eligendi laborum.
+    </p>
+
+    <button onclick="make_bigger()">Agrandar</button>
+    <button onclick="make_smaller()">Achicar</button>
+
+    <script>
+
+    function make_bigger(){
+
+        var p = document.getElementById('paragraph')
+        var font_size = p.style.fontSize
+        var number_size = parseInt(font_size.split('px')[0]) + 5
+        p.style.fontSize = (number_size + 'px')
+}    
+       
+    function make_smaller(){
+     
+        var p = document.getElementById('paragraph')
+        var font_size = p.style.fontSize
+        var number_size = parseInt(font_size.split('px')[0]) - 5
+        p.style.fontSize = (number_size + 'px')
+        
+}    
+
+    </script>
+</body>
+</html>
